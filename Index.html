@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insieme per la Dislessia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            color: #0056b3;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+        }
+
+        .controls label {
+            margin-right: 10px;
+        }
+
+        .controls select, .controls button {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        /* Font ad alta leggibilità per la dislessia */
+        .dyslexic-font {
+            font-family: 'Open Dyslexic', Arial, sans-serif; /* Open Dyslexic è un font ottimizzato per la dislessia */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Insieme per la Dislessia</h1>
+        <p>
+            Questa applicazione è stata creata per migliorare la comprensione e facilitare la comunicazione.
+            È uno strumento per sensibilizzare le persone e offrire supporto a chi vive con la dislessia.
+        </p>
+
+        <div class="controls">
+            <label for="font-select">Scegli il font:</label>
+            <select id="font-select">
+                <option value="default">Predefinito</option>
+                <option value="dyslexic">Open Dyslexic</option>
+            </select>
+        </div>
+
+        <div class="content">
+            <h2>Cos'è la dislessia?</h2>
+            <p id="main-text">
+                La dislessia è una difficoltà specifica dell'apprendimento che riguarda la lettura. Non è una malattia e non ha nulla a che vedere con l'intelligenza. È una condizione neurologica che rende più difficile associare i suoni alle lettere e decifrare le parole. Con il giusto supporto, le persone con dislessia possono avere successo in qualsiasi campo.
+            </p>
+            <h2>Come possiamo aiutare?</h2>
+            <p>
+                Usare font ad alta leggibilità, come quello che puoi selezionare qui sopra, può aiutare. Inoltre, è utile dare più tempo per leggere, usare colori che non affaticano la vista e preferire testi brevi e ben strutturati.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const fontSelect = document.getElementById('font-select');
+        const content = document.querySelector('.content');
+
+        fontSelect.addEventListener('change', (event) => {
+            if (event.target.value === 'dyslexic') {
+                content.classList.add('dyslexic-font');
+            } else {
+                content.classList.remove('dyslexic-font');
+            }
+        });
+    </script>
+</body>
+</html>
